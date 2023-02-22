@@ -9,7 +9,6 @@ import { User, UserSchema } from './schema/user.schema';
   imports: [
     MongooseModule.forRoot(
       'mongodb+srv://admin:admin123@cluster0.kwbtz3c.mongodb.net/?retryWrites=true&w=majority',
-      // { dbName: 'users' },
     ),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
   ],

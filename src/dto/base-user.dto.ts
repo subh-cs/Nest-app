@@ -1,7 +1,6 @@
 //dto/base-user.dto.ts
 import {
   IsNotEmpty,
-  IsNumber,
   IsString,
   MaxLength,
   MinLength,
