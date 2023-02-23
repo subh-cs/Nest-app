@@ -13,31 +13,31 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller()
 export class AppController {
-  constructor(private readonly service: AppService) {}
+  constructor(private readonly appService: AppService) {}
 
   @Get('api')
   async index() {
-    return await this.service.findAll();
+    return await this.appService.findAll();
   }
 
   @Get('api/:id')
   async find(@Param('id') id: string) {
-    return await this.service.findOne(id);
+    return await this.appService.findOne(id);
   }
 
   @Post('api')
   async create(@Body() createUserDto: CreateUserDto) {
-    return await this.service.create(createUserDto);
+    return await this.appService.create(createUserDto);
   }
 
   @Put('api/:id')
   async update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return await this.service.update(id, updateUserDto);
+    return await this.appService.update(id, updateUserDto);
   }
 
   @Delete('api/:id')
   async delete(@Param('id') id: string) {
-    return await this.service.delete(id);
+    return await this.appService.delete(id);
   }
   // @Get()
   // getHello(): string {
